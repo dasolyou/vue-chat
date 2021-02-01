@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <chat-layout></chat-layout>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ChatLayout from './layout/ChatLayout.vue'
 
 export default {
   name: 'App',
+  created(){
+    this.$store.commit('INIT_CHAT');
+  },
   components: {
-    HelloWorld
+    ChatLayout,
   }
 }
 </script>
